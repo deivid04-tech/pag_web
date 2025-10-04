@@ -1,1 +1,28 @@
 .github/workflows/alerta.yml
+name: Notificación Hola Mundo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1: Clonar el repositorio
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Paso 2: Ejecutar el programa (JavaScript en Node.js)
+      - name: Ejecutar Hola Mundo
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: node index.js
+
+      # Paso 3: Enviar notificación a ntfy.sh
+      - name: Enviar notificación a ntfy.sh
+        run: |
+          curl -d "Se realizó un push a main: Hola Mundo ejecutado ✅" https://ntfy.sh/devops-itla
