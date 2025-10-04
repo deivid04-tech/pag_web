@@ -1,4 +1,4 @@
-name: Notificación Hola Mundo
+name: Deivid TAveras-2023-0979
 
 on:
   push:
@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       # Configurar Node.js y ejecutar el programa
-      - name: Ejecutar Hola Mundo
+      - name: Deivid TAveras-2023-0979
         uses: actions/setup-node@v3
         with:
           node-version: '18'
@@ -24,4 +24,4 @@ jobs:
       # Enviar notificación a ntfy.sh
       - name: Enviar notificación a ntfy.sh
         run: |
-          curl -d "Se realizó un push a main: Hola Mundo ejecutado ✅" https://ntfy.sh/devops-itla
+          curl -d "Se realizó un push a main: Deivid TAveras-2023-0979 ejecutado ✅" https://ntfy.sh/devops-itla
